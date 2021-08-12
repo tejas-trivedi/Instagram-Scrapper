@@ -32,7 +32,6 @@ class InstaScrapeView(APIView):
         username = request.data.get("username")
 
         os.system("instagram-scraper {} --media-metadata --media-types none -u _._an_._007 -p CSE001tt".format(username))
-        print("Working till here")
 
         with open("{}/{}.json".format(username, username)) as fp:
             v = fp.read()
