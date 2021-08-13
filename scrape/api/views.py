@@ -29,9 +29,12 @@ class InstaScrapeView(APIView):
 
     def post(self, request, *args, **kwargs):
 
+        your_insta_username = ""
+        your_insta_password = ""
+
         username = request.data.get("username")
 
-        os.system("instagram-scraper {} --media-metadata --media-types none -u _._an_._007 -p CSE001tt".format(username))
+        os.system("instagram-scraper {} --media-metadata --media-types none -u {} -p {}".format(username, your_insta_username, your_insta_password))
 
         with open("{}/{}.json".format(username, username)) as fp:
             v = fp.read()
